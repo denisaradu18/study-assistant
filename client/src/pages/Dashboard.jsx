@@ -145,9 +145,9 @@ const generateSummary = async () => {
   }, [activeTab]);
 
   const tabs = [
-    { key: "summarize", label: "✦ Summarize" },
-    { key: "quiz", label: "🧠 Quiz" },
-    { key: "history", label: "📋 History" },
+    { key: "summarize", label: "Summarize" },
+    { key: "quiz", label: "Quiz" },
+    { key: "history", label: "History" },
   ];
 
   return (
@@ -212,7 +212,7 @@ const generateSummary = async () => {
                   disabled={loading}
                   className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-5 py-3 rounded-xl text-sm font-medium transition-colors"
                 >
-                  {loading ? "Generating..." : "🧠 Generate Quiz"}
+                  {loading ? "Generating..." : " Generate Quiz"}
                 </button>
               </div>
             </div>
@@ -242,7 +242,7 @@ const generateSummary = async () => {
           <div className="max-w-2xl mx-auto">
             {quiz.length === 0 ? (
               <div className="text-center py-20 text-gray-500">
-                <p className="text-5xl mb-4">🧠</p>
+                <p className="text-5xl mb-4"></p>
                 <p className="text-lg">No quiz generated yet.</p>
                 <p className="text-sm mt-2">Go to Summarize tab, paste text and click Generate Quiz.</p>
               </div>
@@ -320,7 +320,7 @@ const generateSummary = async () => {
               <div className="text-center py-20 text-gray-500">Loading...</div>
             ) : history.length === 0 ? (
               <div className="text-center py-20 text-gray-500">
-                <p className="text-5xl mb-4">📋</p>
+                <p className="text-5xl mb-4"></p>
                 <p>No history yet. Generate a summary or quiz to get started.</p>
               </div>
             ) : (
@@ -330,7 +330,7 @@ const generateSummary = async () => {
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex items-center gap-2">
                         <span className={`text-xs px-2 py-1 rounded-full font-medium ${item.type === "quiz" ? "bg-purple-900 text-purple-300" : "bg-blue-900 text-blue-300"}`}>
-                          {item.type === "quiz" ? "🧠 Quiz" : "✦ Summary"}
+                          {item.type === "quiz" ? "Quiz" : "Summary"}
                         </span>
                         <span className="text-xs text-gray-500">
                           {item.createdAt?.toDate?.()?.toLocaleDateString("ro-RO", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
